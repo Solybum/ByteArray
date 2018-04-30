@@ -11,23 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Fix write float in big endian, moved project to it's own repo)</releaseNotes>
-    <copyright>Copyright © Soleil Rojas 2017</copyr<?xml version="1.0"?>
-<package >
-  <metadata>
-    <id>$id$</id>
-    <version>$version$</version>
-    <title>$title$</title>
-    <authors>Soleil Rojas</authors>
-    <owners>Soleil Rojas</owners>
-    <licenseUrl>https://github.com/Solybum/Libraries/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/Solybum/Libraries/tree/master/ByteArray</projectUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
-    <releaseNotes>Breaking change to existing method Clear(int, int), add new method Clear(int length).</releaseNotes>
     <copyright>Copyright © Soleil Rojas 2017</copyright>
-    <tags>byte array data conversion</tags>
-  </metadata>
-</package>ight>
     <tags>byte array data conversion</tags>
   </metadata>
 </package>
