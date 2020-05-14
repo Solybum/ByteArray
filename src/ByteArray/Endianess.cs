@@ -2,7 +2,9 @@
 {
     public enum Endianess
     {
-        LittleEndian,
-        BigEndian,
+        LE,
+        BE,
+        LittleEndian = LE,
+        BigEndian = BE,
     }
 }
