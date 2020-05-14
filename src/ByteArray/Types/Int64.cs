@@ -4,25 +4,25 @@
     {
         public long ReadI64()
         {
-            long result = this.ReadI64(this.position, this.Endianess);
+            long result = this.ReadI64(this.position, this.endianness);
             this.position += 4;
             return result;
         }
         public long ReadI64(int position)
         {
-            long result = this.ReadI64(position, this.Endianess);
+            long result = this.ReadI64(position, this.endianness);
             return result;
         }
-        public long ReadI64(Endianess endianess)
+        public long ReadI64(Endianness endianness)
         {
-            long result = this.ReadI64(this.position, endianess);
+            long result = this.ReadI64(this.position, endianness);
             this.position += 4;
             return result;
         }
-        public long ReadI64(int position, Endianess endianess)
+        public long ReadI64(int position, Endianness endianness)
         {
             long result;
-            if (endianess == Endianess.BE)
+            if (endianness == Endianness.BE)
             {
                 result = this.buffer[position + 7];
                 result |= (uint)(this.buffer[position + 6] << 8);
@@ -50,21 +50,21 @@
 
         public void Write(long value)
         {
-            this.Write(value, this.position, this.Endianess);
+            this.Write(value, this.position, this.endianness);
             this.position += 4;
         }
         public void Write(long value, int position)
         {
-            this.Write(value, position, this.Endianess);
+            this.Write(value, position, this.endianness);
         }
-        public void Write(long value, Endianess endianess)
+        public void Write(long value, Endianness endianness)
         {
-            this.Write(value, this.position, endianess);
+            this.Write(value, this.position, endianness);
             this.position += 4;
         }
-        public void Write(long value, int position, Endianess endianess)
+        public void Write(long value, int position, Endianness endianness)
         {
-            if (endianess == Endianess.BE)
+            if (endianness == Endianness.BE)
             {
                 this.buffer[position + 7] = (byte)value;
                 this.buffer[position + 6] = (byte)(value >> 8);

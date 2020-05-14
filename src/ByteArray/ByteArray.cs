@@ -35,31 +35,31 @@ namespace Soly.Utils
                 this.position = value;
             }
         }
-        public Endianess Endianess { get; set; }
+        public Endianness endianness { get; set; }
 
-        public ByteArray(int size) : this(size, Endianess.LE)
+        public ByteArray(int size) : this(size, Endianness.LE)
         {
         }
-        public ByteArray(int size, Endianess endianess)
+        public ByteArray(int size, Endianness endianness)
         {
             if (size < 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(size));
             }
             this.buffer = new byte[size];
-            this.Endianess = endianess;
+            this.endianness = endianness;
         }
-        public ByteArray(byte[] byteArray) : this(byteArray, Endianess.LE)
+        public ByteArray(byte[] byteArray) : this(byteArray, Endianness.LE)
         {
         }
-        public ByteArray(byte[] byteArray, Endianess endianess)
+        public ByteArray(byte[] byteArray, Endianness endianness)
         {
             if (byteArray == null)
             {
                 throw new ArgumentNullException(nameof(byteArray));
             }
             this.buffer = byteArray;
-            this.Endianess = endianess;
+            this.endianness = endianness;
         }
         public ByteArray(ByteArray byteArray)
         {
@@ -69,7 +69,7 @@ namespace Soly.Utils
             }
 
             this.buffer = new byte[byteArray.Length];
-            this.Endianess = byteArray.Endianess;
+            this.endianness = byteArray.endianness;
 
             byteArray.position = 0;
             Array.Copy(byteArray.Buffer, this.Buffer, byteArray.Length);

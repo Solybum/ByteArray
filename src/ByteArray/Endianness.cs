@@ -1,6 +1,6 @@
 ﻿namespace Soly.Utils
 {
-    public enum Endianess
+    public enum Endianness
     {
         LE,
         BE,

@@ -5,7 +5,7 @@
     <RootNamespace>Soly.Utils</RootNamespace>
     <Description>Byte array wrapper to ease data type conversions</Description>
     <Authors>Soleil Rojas</Authors>
-    <Version>1.2.0</Version>
+    <Version>1.2.1</Version>
     <Copyright>Copyright © Soleil Rojas 2017</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/solybum/ByteArray</PackageProjectUrl>

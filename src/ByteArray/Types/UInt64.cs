@@ -4,25 +4,25 @@
     {
         public ulong ReadU64()
         {
-            ulong result = this.ReadU64(this.position, this.Endianess);
+            ulong result = this.ReadU64(this.position, this.endianness);
             this.position += 4;
             return result;
         }
         public ulong ReadU64(int position)
         {
-            ulong result = this.ReadU64(position, this.Endianess);
+            ulong result = this.ReadU64(position, this.endianness);
             return result;
         }
-        public ulong ReadU64(Endianess endianess)
+        public ulong ReadU64(Endianness endianness)
         {
-            ulong result = this.ReadU64(this.position, endianess);
+            ulong result = this.ReadU64(this.position, endianness);
             this.position += 4;
             return result;
         }
-        public ulong ReadU64(int position, Endianess endianess)
+        public ulong ReadU64(int position, Endianness endianness)
         {
             ulong result;
-            if (endianess == Endianess.BE)
+            if (endianness == Endianness.BE)
             {
                 result = this.buffer[position + 7];
                 result |= (uint)(this.buffer[position + 6] << 8);
@@ -49,21 +49,21 @@
 
         public void Write(ulong value)
         {
-            this.Write(value, this.position, this.Endianess);
+            this.Write(value, this.position, this.endianness);
             this.position += 4;
         }
         public void Write(ulong value, int position)
         {
-            this.Write(value, position, this.Endianess);
+            this.Write(value, position, this.endianness);
         }
-        public void Write(ulong value, Endianess endianess)
+        public void Write(ulong value, Endianness endianness)
         {
-            this.Write(value, this.position, endianess);
+            this.Write(value, this.position, endianness);
             this.position += 4;
         }
-        public void Write(ulong value, int position, Endianess endianess)
+        public void Write(ulong value, int position, Endianness endianness)
         {
-            if (endianess == Endianess.BE)
+            if (endianness == Endianness.BE)
             {
                 this.buffer[position + 7] = (byte)value;
                 this.buffer[position + 6] = (byte)(value >> 8);

@@ -6,25 +6,25 @@ namespace Soly.Utils
     {
         public double ReadF64()
         {
-            double result = this.ReadF64(this.position, this.Endianess);
+            double result = this.ReadF64(this.position, this.endianness);
             this.position += 4;
             return result;
         }
         public double ReadF64(int position)
         {
-            double result = this.ReadF64(position, this.Endianess);
+            double result = this.ReadF64(position, this.endianness);
             return result;
         }
-        public double ReadF64(Endianess endianess)
+        public double ReadF64(Endianness endianness)
         {
-            double result = this.ReadF64(this.position, endianess);
+            double result = this.ReadF64(this.position, endianness);
             this.position += 4;
             return result;
         }
-        public double ReadF64(int position, Endianess endianess)
+        public double ReadF64(int position, Endianness endianness)
         {
             double result;
-            if (endianess == Endianess.BE)
+            if (endianness == Endianness.BE)
             {
                 this.temp[0] = this.buffer[position + 7];
                 this.temp[1] = this.buffer[position + 6];
@@ -45,22 +45,22 @@ namespace Soly.Utils
 
         public void Write(double value)
         {
-            this.Write(value, this.position, this.Endianess);
+            this.Write(value, this.position, this.endianness);
             this.position += 4;
         }
         public void Write(double value, int position)
         {
-            this.Write(value, position, this.Endianess);
+            this.Write(value, position, this.endianness);
         }
-        public void Write(double value, Endianess endianess)
+        public void Write(double value, Endianness endianness)
         {
-            this.Write(value, this.position, endianess);
+            this.Write(value, this.position, endianness);
             this.position += 4;
         }
-        public void Write(double value, int position, Endianess endianess)
+        public void Write(double value, int position, Endianness endianness)
         {
             Array.Copy(BitConverter.GetBytes(value), 0, this.temp, 0, 8);
-            if (endianess == Endianess.BE)
+            if (endianness == Endianness.BE)
             {
                 this.buffer[position + 7] = this.temp[0];
                 this.buffer[position + 6] = this.temp[1];

@@ -6,25 +6,25 @@ namespace Soly.Utils
     {
         public float ReadF32()
         {
-            float result = this.ReadF32(this.position, this.Endianess);
+            float result = this.ReadF32(this.position, this.endianness);
             this.position += 4;
             return result;
         }
         public float ReadF32(int position)
         {
-            float result = this.ReadF32(position, this.Endianess);
+            float result = this.ReadF32(position, this.endianness);
             return result;
         }
-        public float ReadF32(Endianess endianess)
+        public float ReadF32(Endianness endianness)
         {
-            float result = this.ReadF32(this.position, endianess);
+            float result = this.ReadF32(this.position, endianness);
             this.position += 4;
             return result;
         }
-        public float ReadF32(int position, Endianess endianess)
+        public float ReadF32(int position, Endianness endianness)
         {
             float result;
-            if (endianess == Endianess.BE)
+            if (endianness == Endianness.BE)
             {
                 this.temp[0] = this.buffer[position + 3];
                 this.temp[1] = this.buffer[position + 2];
@@ -41,22 +41,22 @@ namespace Soly.Utils
 
         public void Write(float value)
         {
-            this.Write(value, this.position, this.Endianess);
+            this.Write(value, this.position, this.endianness);
             this.position += 4;
         }
         public void Write(float value, int position)
         {
-            this.Write(value, position, this.Endianess);
+            this.Write(value, position, this.endianness);
         }
-        public void Write(float value, Endianess endianess)
+        public void Write(float value, Endianness endianness)
         {
-            this.Write(value, this.position, endianess);
+            this.Write(value, this.position, endianness);
             this.position += 4;
         }
-        public void Write(float value, int position, Endianess endianess)
+        public void Write(float value, int position, Endianness endianness)
         {
             Array.Copy(BitConverter.GetBytes(value), 0, this.temp, 0, 4);
-            if (endianess == Endianess.BE)
+            if (endianness == Endianness.BE)
             {
                 this.buffer[position + 3] = this.temp[0];
                 this.buffer[position + 2] = this.temp[1];

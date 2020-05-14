@@ -4,25 +4,25 @@
     {
         public int ReadI32()
         {
-            int result = this.ReadI32(this.position, this.Endianess);
+            int result = this.ReadI32(this.position, this.endianness);
             this.position += 4;
             return result;
         }
         public int ReadI32(int position)
         {
-            int result = this.ReadI32(position, this.Endianess);
+            int result = this.ReadI32(position, this.endianness);
             return result;
         }
-        public int ReadI32(Endianess endianess)
+        public int ReadI32(Endianness endianness)
         {
-            int result = this.ReadI32(this.position, endianess);
+            int result = this.ReadI32(this.position, endianness);
             this.position += 4;
             return result;
         }
-        public int ReadI32(int position, Endianess endianess)
+        public int ReadI32(int position, Endianness endianness)
         {
             int result = 0;
-            if (endianess == Endianess.BE)
+            if (endianness == Endianness.BE)
             {
                 result |= this.buffer[position + 3];
                 result |= this.buffer[position + 2] << 8;
@@ -41,21 +41,21 @@
 
         public void Write(int value)
         {
-            this.Write(value, this.position, this.Endianess);
+            this.Write(value, this.position, this.endianness);
             this.position += 4;
         }
         public void Write(int value, int position)
         {
-            this.Write(value, position, this.Endianess);
+            this.Write(value, position, this.endianness);
         }
-        public void Write(int value, Endianess endianess)
+        public void Write(int value, Endianness endianness)
         {
-            this.Write(value, this.position, endianess);
+            this.Write(value, this.position, endianness);
             this.position += 4;
         }
-        public void Write(int value, int position, Endianess endianess)
+        public void Write(int value, int position, Endianness endianness)
         {
-            if (endianess == Endianess.BE)
+            if (endianness == Endianness.BE)
             {
                 this.buffer[position + 3] = (byte)value;
                 this.buffer[position + 2] = (byte)(value >> 8);
