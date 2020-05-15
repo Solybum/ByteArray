@@ -21,17 +21,17 @@
         }
         public int ReadI32(int position, Endianness endianness)
         {
-            int result = 0;
+            int result;
             if (endianness == Endianness.BE)
             {
-                result |= this.buffer[position + 3];
+                result = this.buffer[position + 3];
                 result |= this.buffer[position + 2] << 8;
                 result |= this.buffer[position + 1] << 16;
                 result |= this.buffer[position + 0] << 24;
             }
             else
             {
-                result |= this.buffer[position + 0];
+                result = this.buffer[position + 0];
                 result |= this.buffer[position + 1] << 8;
                 result |= this.buffer[position + 2] << 16;
                 result |= this.buffer[position + 3] << 24;
