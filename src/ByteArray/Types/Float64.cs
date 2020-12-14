@@ -7,7 +7,7 @@ namespace Soly.Utils
         public double ReadF64()
         {
             double result = this.ReadF64(this.position, this.endianness);
-            this.position += 4;
+            this.position += 8;
             return result;
         }
         public double ReadF64(int position)
@@ -18,7 +18,7 @@ namespace Soly.Utils
         public double ReadF64(Endianness endianness)
         {
             double result = this.ReadF64(this.position, endianness);
-            this.position += 4;
+            this.position += 8;
             return result;
         }
         public double ReadF64(int position, Endianness endianness)
@@ -46,7 +46,7 @@ namespace Soly.Utils
         public void Write(double value)
         {
             this.Write(value, this.position, this.endianness);
-            this.position += 4;
+            this.position += 8;
         }
         public void Write(double value, int position)
         {
@@ -55,7 +55,7 @@ namespace Soly.Utils
         public void Write(double value, Endianness endianness)
         {
             this.Write(value, this.position, endianness);
-            this.position += 4;
+            this.position += 8;
         }
         public void Write(double value, int position, Endianness endianness)
         {
