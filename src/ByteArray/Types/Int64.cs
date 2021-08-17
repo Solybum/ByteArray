@@ -5,7 +5,7 @@
         public long ReadI64()
         {
             long result = this.ReadI64(this.position, this.endianness);
-            this.position += 4;
+            this.position += 8;
             return result;
         }
         public long ReadI64(int position)
@@ -16,7 +16,7 @@
         public long ReadI64(Endianness endianness)
         {
             long result = this.ReadI64(this.position, endianness);
-            this.position += 4;
+            this.position += 8;
             return result;
         }
         public long ReadI64(int position, Endianness endianness)
@@ -50,7 +50,7 @@
         public void Write(long value)
         {
             this.Write(value, this.position, this.endianness);
-            this.position += 4;
+            this.position += 8;
         }
         public void Write(long value, int position)
         {
@@ -59,7 +59,7 @@
         public void Write(long value, Endianness endianness)
         {
             this.Write(value, this.position, endianness);
-            this.position += 4;
+            this.position += 8;
         }
         public void Write(long value, int position, Endianness endianness)
         {

@@ -5,7 +5,7 @@
         public ulong ReadU64()
         {
             ulong result = this.ReadU64(this.position, this.endianness);
-            this.position += 4;
+            this.position += 8;
             return result;
         }
         public ulong ReadU64(int position)
@@ -16,7 +16,7 @@
         public ulong ReadU64(Endianness endianness)
         {
             ulong result = this.ReadU64(this.position, endianness);
-            this.position += 4;
+            this.position += 8;
             return result;
         }
         public ulong ReadU64(int position, Endianness endianness)
@@ -50,7 +50,7 @@
         public void Write(ulong value)
         {
             this.Write(value, this.position, this.endianness);
-            this.position += 4;
+            this.position += 8;
         }
         public void Write(ulong value, int position)
         {
@@ -59,7 +59,7 @@
         public void Write(ulong value, Endianness endianness)
         {
             this.Write(value, this.position, endianness);
-            this.position += 4;
+            this.position += 8;
         }
         public void Write(ulong value, int position, Endianness endianness)
         {
