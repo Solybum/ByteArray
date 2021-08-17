@@ -25,25 +25,24 @@
             if (endianness == Endianness.BE)
             {
                 result = this.buffer[position + 7];
-                result |= (uint)(this.buffer[position + 6] << 8);
-                result |= (uint)(this.buffer[position + 5] << 16);
-                result |= (uint)(this.buffer[position + 4] << 24);
-                result |= (uint)(this.buffer[position + 3] << 32);
-                result |= (uint)(this.buffer[position + 2] << 40);
-                result |= (uint)(this.buffer[position + 1] << 48);
-                result |= (uint)(this.buffer[position + 0] << 56);
+                result |= (long)this.buffer[position + 6] << 8;
+                result |= (long)this.buffer[position + 5] << 16;
+                result |= (long)this.buffer[position + 4] << 24;
+                result |= (long)this.buffer[position + 3] << 32;
+                result |= (long)this.buffer[position + 2] << 40;
+                result |= (long)this.buffer[position + 1] << 48;
+                result |= (long)this.buffer[position + 0] << 56;
             }
             else
             {
                 result = this.buffer[position + 0];
-                result |= (uint)(this.buffer[position + 1] << 8);
-                result |= (uint)(this.buffer[position + 2] << 16);
-                result |= (uint)(this.buffer[position + 3] << 24);
-                result |= (uint)(this.buffer[position + 4] << 32);
-                result |= (uint)(this.buffer[position + 5] << 40);
-                result |= (uint)(this.buffer[position + 6] << 48);
-                result |= (uint)(this.buffer[position + 7] << 56);
-                result |= this.buffer[position + 0];
+                result |= (long)this.buffer[position + 1] << 8;
+                result |= (long)this.buffer[position + 2] << 16;
+                result |= (long)this.buffer[position + 3] << 24;
+                result |= (long)this.buffer[position + 4] << 32;
+                result |= (long)this.buffer[position + 5] << 40;
+                result |= (long)this.buffer[position + 6] << 48;
+                result |= (long)this.buffer[position + 7] << 56;
             }
             return result;
         }
